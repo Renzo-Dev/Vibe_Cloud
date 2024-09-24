@@ -1,0 +1,232 @@
+$f_size__form_title: calc(8 * 0.3vw);
+$font_size: calc(5 * 0.25vw);
+$placeholder__bc: #bbbbbb;
+$submit__button__bc: #8f8a8a;
+$form__input__bc: #252525;
+$link__color: #b0b0b0;
+$form__input__text: #ffffff;
+
+#main__container {
+  font-family: Inertia, 'Helvetica Neue', Helvetica, Arial, serif;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  align-items: center;
+
+  .form__title {
+    color: #b9b9b9;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    margin: 30px 0 10px 0;
+    font-size: $f_size__form_title;
+  }
+
+  .link__login__account {
+    font-size: 16px;
+    margin-bottom: 50px;
+    color: #c9c9c9;
+
+    a {
+      text-decoration: none;
+      color: $link__color;
+      font-weight: 600;
+    }
+  }
+
+  #register__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+    max-height: 300px;
+
+    width: 100%;
+    max-width: 600px;
+
+    .input__container {
+      margin-bottom: 25px;
+      width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .form__input {
+        color: $form__input__text;
+        font-size: $font_size;
+        background-color: $form__input__bc;
+        height: 60px;
+        width: 100%;
+        max-width: 480px;
+        padding: 17px 25px;
+        border: none;
+        outline: none;
+        border-radius: 30px;
+
+        &:placeholder-shown {
+          background-color: $form__input__bc;
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+          -webkit-box-shadow: 0 0 0 30px $form__input__bc inset !important;
+          -webkit-text-fill-color: $form__input__text !important;
+        }
+
+        &::placeholder {
+          font-size: $font_size;
+          color: $placeholder__bc;
+        }
+      }
+    }
+
+    .Errors__Message {
+      width: 100%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: red;
+      align-self: start;
+      margin-top: 10px;
+      animation-name: errorShow;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+    }
+
+    .password__field {
+      height: 60px;
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: row;
+
+      .password {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      .image__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        background-color: $form__input__bc;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        padding-right: 15px;
+
+        .showHidePassword {
+          user-select: none;
+          width: calc(6 * 0.25vw);
+          border-radius: 30px;
+          transition: 100ms all linear;
+
+          &:hover {
+            cursor: pointer;
+            transform: scale(0.85);
+            background-color: #c7c7c7;
+          }
+        }
+      }
+    }
+
+    .submit__button {
+      font-size: 23px;
+      color: #000000;
+      border-radius: 30px;
+      margin-top: 25px;
+      padding: 15px 30px;
+      width: 100%;
+      max-width: 450px;
+      border: none;
+      outline: none;
+      background-color: $submit__button__bc;
+
+      inset: 0;
+      transition: 100ms ease-in-out;
+
+      &:hover {
+        transform: scale(0.95);
+        background-color: #a9a9a9;
+        color: #171717;
+        border: 1px solid $submit__button__bc;
+      }
+    }
+
+    .acceptPrivacyPolicy {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+
+      #acceptCheckBox {
+        margin-bottom: 2px;
+        transform: scale(1.2);
+      }
+
+      label {
+        margin-left: 5px;
+        color: #c9c9c9;
+
+        a:link {
+          color: $link__color;
+        }
+
+        /* visited link */
+        a:visited {
+          color: $link__color;
+        }
+
+        /* mouse over link */
+        a:hover {
+          color: $link__color;
+        }
+
+        /* selected link */
+        a:active {
+          color: $link__color;
+        }
+      }
+    }
+  }
+}
+
+.highlight {
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes errorShow {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}

@@ -1,0 +1,14 @@
+$background-color: #313131;
+
+body {
+  width: 100%;
+  height: 100vh;
+  //display: flex;
+  //flex-direction: column;
+}
+
+#app {
+  background-color: $background-color;
+  width: 100%;
+  height: 100%;
+}
